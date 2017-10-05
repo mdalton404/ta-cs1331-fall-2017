@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<!-- saved from url=(0052)http://cs.fit.edu/~ryan/java/language/java-data.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-10">
+<title>Java:  Primitive data types</title>
+</head>
+
+<body>
+<h1>Java: Primitive data types</h1>
+
+<p>
+The eight primitive data types in Java are:
+</p><ul>
+  <li><tt>boolean</tt>, the type whose values are either
+      <tt>true</tt> or <tt>false</tt>
+  </li><li><tt>char</tt>, the character type whose values
+      are 16-bit Unicode characters
+  </li><li>the arithmetic types:
+      <ul>
+	<li>the integral types:
+	    <ul>
+	      <li><tt>byte</tt>
+	      </li><li><tt>short</tt>
+	      </li><li><tt>int</tt>
+	      </li><li><tt>long</tt>
+	    </li></ul>
+	</li><li>the floating-point types:
+	    <ul>
+	      <li><tt>float</tt>
+	      </li><li><tt>double</tt>
+	    </li></ul>
+      </li></ul>
+</li></ul>
+<p></p>
+
+<p>
+Values of class type are references.
+Strings are references to an instance of class <tt>String</tt>.
+</p>
+
+
+<center>
+<table border="" cellpadding="20">
+<caption>
+Primitive data types in Java
+</caption>
+<tbody><tr>
+  <th>Type</th><th>Description</th><th>Default</th><th>Size</th><th>Example Literals</th>
+</tr>
+<tr>
+  <td>boolean</td><td>true or false</td><td>false</td><td>1 bit</td><td><tt>true</tt>, <tt>false</tt>
+</td></tr>
+<tr><td>byte</td><td>twos complement integer</td><td>0</td><td>8 bits</td><td>(none)
+</td></tr><tr>
+  <td>char</td><td>Unicode character</td><td><tt>\u0000</tt></td><td>16 bits
+  </td><td><tt>'a'</tt>, <tt>'\u0041'</tt>, <tt>'\101'</tt>,
+      <tt>'\\'</tt>, <tt>'\''</tt>, <tt>'\n'</tt>, <tt>'ß'</tt></td>
+</tr>
+<tr><td>short</td><td>twos complement integer</td><td>0</td><td>16 bits</td><td>(none)
+</td></tr><tr><td>int</td><td>twos complement integer</td><td>0</td><td>32 bits</td><td><tt>-2</tt>, <tt>-1</tt>, <tt>0</tt>, <tt>1</tt>, <tt>2</tt>
+</td></tr><tr><td>long</td><td>twos complement integer</td><td>0</td><td>64 bits</td><td><tt>-2L</tt>, <tt>-1L</tt>, <tt>0L</tt>, <tt>1L</tt>, <tt>2L</tt>
+</td></tr><tr>
+  <td>float</td><td>IEEE 754 floating point</td><td>0.0</td><td>32 bits
+  </td><td><tt>1.23e100f</tt>, <tt>-1.23e-100f</tt>, <tt>.3f</tt>, <tt>3.14F</tt></td>
+</tr>
+<tr>
+  <td>double</td><td>IEEE 754 floating point</td><td>0.0</td><td>64 bits
+  </td><td><tt>1.23456e300d</tt>, <tt>-1.23456e-300d</tt>, <tt>1e1d</tt></td>
+</tr>
+</tbody></table> 
+</center>
+
+<h2>Boolean</h2>
+
+Values of type <tt>boolean</tt> are not converted implicitly or
+explicitly (with casts) to any other type.
+But the programmer can easily write conversion code:
+<pre>final int i = b?1:0;
+final double d = b?1.0:0.0;
+final boolean b = i&gt;0?true:false;
+</pre>
+
+<h2>Character</h2>
+
+The 16-bit Unicode character set underlies both
+the Java source program and <tt>char</tt> data type.
+So, not only are Java programs written in Unicode characters,
+but Java programs can manipulate Unicode data.
+
+<p>
+<img alt="" src="./Java_ Primitive data types_files/allocation.gif">
+
+</p><p>
+<img alt="" src="./Java_ Primitive data types_files/unicode_chars.gif">
+
+</p><p>
+
+</p><h3>ISO 8859 Family</h3>
+
+<ul>
+  <li>ISO 8859-1 (Latin-1).  Western European languages
+        (French, German, Spanish, Italian, the Scandinavian languages, and so on)
+
+  </li><li>ISO 8859-2 (Latin-2) Eastern European languages (Czech cz, Hungarian, Polish,
+ Romanian, and so on)
+
+  </li><li>ISO 8859-15 (Latin-9,  aka Latin-0)
+      <a href="http://www.eki.ee/letter/chardata.cgi?comp1=8859-15&amp;comp2=8859-1">updates to Latin-1</a>
+
+</li></ul>
+
+<pre>          Removed                          Added
+A4 U+00A4 CURRENCY SIGN                   U+20AC EURO SIGN 
+A6 U+00A6 BROKEN BAR                      U+0160 LATIN CAPITAL LETTER S WITH CARON
+A8 U+00A8 DIAERESIS                       U+0161 LATIN SMALL LETTER S WITH CARON
+B4 U+00B4 ACUTE ACCENT                    U+017D LATIN CAPITAL LETTER Z WITH CARON
+B8 U+00B8 CEDILLA                         U+017E LATIN SMALL LETTER Z WITH CARON
+BC U+00BC VULGAR FRACTION ONE QUARTER     U+0152 LATIN CAPITAL LIGATURE OE
+BD U+00BD VULGAR FRACTION ONE HALF        U+0153 LATIN SMALL LIGATURE OE
+BE U+00BE VULGAR FRACTION THREE QUARTERS  U+0178 LATIN CAPITAL LETTER Y WITH DIAERESIS
+</pre>
+
+
+Bosnian bs; Czech cs; Estonian et; Finnish fi; Croatian hr; Lithuanian lt; Latvian lv;
+Slovak sk; Slovenian sl use  the "s with caron".
+
+Welsh cy, French fr use the "y with diaeresis"
+
+
+
+<p>
+<a href="http://www.unicode.org/roadmaps/bmp/">Unicode BMP</a>
+
+</p><h2>Numeric</h2>
+
+
+<center>
+<table border="" cellpadding="15">
+<caption>
+Range of numeric data types in Java
+</caption>
+<tbody><tr>
+  <th>Type</th><th>Size</th><th>Range</th>
+</tr>
+<tr><td>byte</td><td>8 bits</td><td>-128 .. 127</td></tr>
+<tr><td>short</td><td>16 bits</td><td>-32,768 .. 32,767</td></tr>
+<tr><td>int</td><td>32 bits</td><td>-2,147,483,648 .. 2,147,483,647</td></tr>
+<tr><td>long</td><td>64 bits</td><td>-9,223,372,036,854,775,808 .. 9,223,372,036,854,775,807</td></tr>
+<tr>
+  <td>float</td><td>32 bits
+  </td><td>3.40282347 x 10<sup>38</sup>, 1.40239846 x 10<sup>-45</sup></td>
+</tr>
+<tr>
+  <td>double</td><td>64 bits
+  </td><td>1.7976931348623157 x 10<sup>308</sup>, 4.9406564584124654 x 10<sup>-324</sup></td>
+</tr>
+</tbody></table> 
+</center>
+
+<p>
+In the <a href="http://www.cs.rochester.edu/u/scott/pragmatics/figures/chap05.html#F05.06">IEEE 754 floating-point number standard</a>
+the finite, nonzero values are of the form
+<i>s · m · 2<sup>e</sup></i>.
+For words of length 32 bits
+<i>s</i> is 0 (for positive) or 1 (for negative),
+<i>m</i> is a positive integer less that <i>2<sup>24</sup></i>, and
+<i>e</i> is between -127 and 128, inclusive.
+For words of length 64 bits
+<i>s</i> is 0 (for positive) or 1 (for negative),
+<i>m</i> is a positive integer less that <i>2<sup>53</sup></i>, and
+<i>e</i> is between -1023 and 1024, inclusive.
+</p>
+
+<table>
+  <tbody><tr><td>zero</td><td>0</td><td>0</td><td>±0</td></tr>
+  <tr><td>infinity</td><td>2b+1</td><td>0</td><td>±inf</td></tr>
+  <tr><td>denormalized</td><td>0</td><td>!=0</td><td>±0.fx2<sup>-b+1</sup></td></tr>
+  <tr><td>normalized</td><td>1&lt;=e&lt;=2b</td><td></td><td>±1.fx2<sup>e-b</sup></td></tr>
+  <tr><td>NaN</td><td>2b+1</td><td>!=0</td><td>NaN</td></tr>
+</tbody></table>
+  
+  
+
+<p>
+In the IEEE 754 floating-point number standard for 32 bit words,
+the largest positive number that can be stored is 
+1.11111111111111111111111 x 2<sup>127</sup> = 3.40282347 x 10<sup>38</sup>. 
+The smallest positive number (in normal form) is 
+1.00000000000000000000000 x 2<sup>-126</sup> = 1.17549435 x 10<sup>-38</sup>.
+The smallest positive number (not in normal form) is
+0.00000000000000000000001 x 2<sup>-126</sup> = 2<sup>-23</sup> x 2<sup>-126</sup> = 1.40239846 x 10<sup>-45</sup>.
+Negative numbers are stored symmetrically.
+</p>
+
+<p>
+In the floating-point number standard for 64 bit words,
+the largest positive number that can be stored is 
+1.11111....11111 x 2<sup>1023</sup> = 1.7976931348623157 x 10<sup>308</sup>. 
+The smallest positive number (in normal form) is 
+1.00000...00000 x 2<sup>-1022</sup> = 2.22507438585072014 x 10<sup>-308</sup>. 
+The smallest positive number (not in normal form) is
+0.00000...00001 x 2<sup>-1022</sup> = 2<sup>-52</sup> x 2<sup>-1022</sup> = 4.9406564584124654 x 10<sup>-324</sup>
+</p>
+
+<p>
+</p><blockquote>
+Operators on floating-point numbers behave exactly as specified by IEEE 754.
+Java requires full support of IEEE 754 denormalized floating-point
+numbers.
+</blockquote>
+<p></p>
+
+<p>
+</p><center>
+<table border="" cellpadding="5">
+<caption>
+Conversions: Widenings and Narrowings
+</caption>
+<tbody><tr>
+  <td align="center"></td>
+  <td>
+  </td><th align="center" colspan="7">from</th>
+</tr>
+<tr align="center" width="38pt">
+  <th>to</th>
+        <td>
+  </td><td>byte</td>
+  <td>short</td>
+  <td>char</td>
+  <td>int</td>
+  <td>long</td>
+  <td>float</td>
+  <td>double</td>
+</tr><tr align="center">
+  <td>byte
+        </td><td>
+  </td><td>[id]
+  </td><td bgcolor="red">&nbsp;
+  </td><td bgcolor="red">&nbsp;
+  </td><td bgcolor="red">&nbsp;
+  </td><td bgcolor="red">&nbsp;
+  </td><td bgcolor="red">&nbsp;
+  </td><td bgcolor="red">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">short
+    </td><td>
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">char
+    </td><td>
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td align="center">[id]</td>
+  <td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">int
+    </td><td>
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">long
+    </td><td>
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">float
+    </td><td>
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">double
+    </td><td>
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+</td></tr>
+</tbody></table>
+</center>
+
+<p>
+</p><center>
+<table border="" cellpadding="15">
+<caption>
+Widenings
+</caption>
+<tbody><tr>
+  <td>to</td><td align="center" colspan="6">from</td>
+</tr>
+<tr>
+  <td align="center">&nbsp;</td>
+  <td align="center">byte<br>-128 .. 127</td>
+  <td align="center">short<br>-32,768 .. 32,767</td>
+  <td align="center">char<br>\u0000 .. \uFFFF</td>
+  <td align="center">int<br>-1</td><td align="center">long<br>-1</td>
+  <td align="center">float<br>1.2</td>
+</tr>
+<tr>
+  <td align="center">short
+  </td><td align="center">-128..127<sup>*</sup>
+  </td><td align="center">[id]</td>
+  <td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">int
+  </td><td align="center">-128..127<sup>*</sup>
+  </td><td align="center">-32,768 .. 32,767<sup>*</sup></td>
+  <td align="center">0 .. 65,535<sup>+</sup></td><td align="center">[id]</td>
+  <td bgcolor="red" align="center">&nbsp;
+  </td><td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">long
+  </td><td align="center">-128 .. 127<sup>*</sup>
+  </td><td align="center">-32,768 .. 32,767<sup>*</sup></td>
+  <td align="center">0 .. 65,535<sup>+</sup></td>
+  <td align="center">-1</td><td align="center">[id]</td>
+  <td bgcolor="red" align="center">&nbsp;
+</td></tr>
+<tr>
+  <td align="center">float
+  </td><td align="center">-128.0 .. 127.0
+  </td><td align="center">-32,768.0 .. 32,767.0</td>
+  <td align="center">0.0 .. 65,535.0</td>
+  <td align="center">-1.0<sup>p</sup></td>
+  <td align="center">-1.0<sup>p</sup></td><td align="center">[id]</td>
+</tr>
+<tr>
+  <td align="center">double
+  </td><td align="center">-128.0 .. 127.0
+  </td><td align="center">-32,768.0 .. 32,767.0</td>
+  <td align="center">0.0 .. 65,535.0</td>
+  <td align="center">-1.0</td>
+  <td align="center">-1.0<sup>p</sup></td>
+  <td align="center">1.2</td>
+</tr>
+</tbody></table>
+</center>
+
+<p>
+<sup>*</sup> sign extend (two's complement)
+</p><p>
+<sup>+</sup> zero fill
+</p><p>
+<sup>p</sup> IEEE round-to-nearest integer, possible loss of precision
+
+
+</p><p>
+With the exception of <tt>boolean</tt>,
+any primitive type can be converted to any other.
+But there might be significant loss of data.  Those conversions that may lose
+data are called narrowing are must be explicited demanded by the programmer
+using a <em>cast</em>.
+The following table suggests how these conversions are performed.
+
+</p><p>
+There is very little reason to perform any of these conversions.
+Usually all calculations are done in the appropriate data type:
+int, long, float, or double.
+
+</p><p>
+Of course, the programmer must be aware of the finite limits of
+the arithemetic data types regardless of which one is chosen.
+There are no byte and short operations so all these values
+are promoted first to <tt>int</tt>.
+When stored back in byte and short variables the programmer must
+use a cast (a narrowing) and prepare for possible loss of data.
+
+</p><p>
+The conversion causing the most trouble is the char to short conversion.
+Since they are both 16 bits it is tempting to convert chars to shorts
+to do arithmetic.
+But a twos-complement 16-bit number is both positive and negative and
+asymetric on top of that.
+Whereas the char type is most naturally considered a simple enumeration
+beginning with zero.
+In all cases the int type, not the short type is the one to choose
+for manipulating the bits of characters.
+These applies to those cases involving byte IO of text data;
+there is no unsigned data in Java.
+The data type <tt>byte</tt> is not unsigned;
+it supports a small range of positive and negative numbers.
+
+</p><p>
+</p><center>
+<table border="" cellpadding="5">
+<caption>
+Narrowings
+</caption>
+<tbody><tr>
+  <td align="center">to</td><td align="center" colspan="7">from</td>
+</tr>
+<tr>
+  <td align="center">&nbsp;</td>
+  <td align="center">byte<br>-128 .. -1,0,1, .. 127</td>
+  <td align="center">short<br>-32,768 .. -1,0,1, .. 32,767</td>
+  <td align="center">char<br>\u0000 .. \uFFFF</td>
+  <td align="center">int<br>-1,0,1</td><td align="center">long<br>-1,0,1</td>
+  <td align="center">float<br>1.2</td>
+  <td align="center">double<br>7.89</td>
+</tr><tr>
+  <td align="center">byte
+  </td><td align="center">[id]
+  </td><td align="center">0 .. -1,0,1, .. -1
+  </td><td align="center">0..-1</td>
+  <td align="center">-1,0,1<sup>d</sup>
+  </td><td align="center">-1,0,1<sup>d</sup>
+  </td><td align="center">(int)
+  </td><td align="center">(int)
+</td></tr>
+<tr>
+  <td align="center">short
+  </td><td align="center"></td><td align="center">[id]
+  </td><td align="center">0..-1</td>
+  <td align="center">-1,0,1<sup>d</sup>
+  </td><td align="center">-1,0,1<sup>d</sup>
+  </td><td align="center">(int)
+  </td><td align="center">(int)
+</td></tr>
+<tr>
+  <td align="center">char
+  </td><td align="center">\uFF80 .. \uFFFF,\u0000,<br>\u0001 .. \u007F
+  </td><td align="center">\u8000 .. \uFFFF,\u0000,<br>\u0001 .. \u7FFF
+  </td><td align="center">[id]</td>
+  <td align="center">\uFFFF,\u0000,\u0001
+  </td><td align="center">\uFFFF,\u0000,\u0001
+  </td><td align="center">(int)
+  </td><td align="center">(int)
+</td></tr>
+<tr>
+  <td align="center">int
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]</td>
+  <td align="center">-1,0,1
+  </td><td align="center">1<sup>r</sup>
+  </td><td align="center">7<sup>r</sup>
+</td></tr>
+<tr>
+  <td align="center">long
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]</td>
+  <td align="center">1<sup>r</sup>
+  </td><td align="center">7<sup>r</sup>
+</td></tr>
+<tr>
+  <td align="center">float
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+  </td><td align="center">7.89<sup>r</sup>
+</td></tr>
+<tr>
+  <td align="center">double
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td bgcolor="green" align="center">&nbsp;
+  </td><td align="center">[id]
+</td></tr>
+</tbody></table>
+</center>
+
+<p><sup>d</sup> discard all but n lowest order bits
+</p><p><sub>r IEEE round-to-nearest
+
+      
+</sub></p><hr>
+<address><a href="http://www.cs.fit.edu/~ryan/">Ryan Stansifer</a> <a href="mailto:ryan@cs.fit.edu">&lt;ryan@cs.fit.edu&gt;</a></address>
+<!-- hhmts start -->
+Last modified: Wed May 28 13:27:30 EDT 2003
+<!-- hhmts end -->
+ 
+
+</body></html>

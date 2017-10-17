@@ -1,10 +1,10 @@
 public class ExceptionPractice {
 	public static void main(String[] args) {
-        System.out.println(1 / 0);
+        //System.out.println(divideOneBy(0));
         /*
 		try {
-			System.out.println(1 / 0);  //arithmetic exception 
-		} catch (ArithmeticException ae) {
+			System.out.println(divideOneBy(0));  //arithmetic exception 
+		} catch (ArithmeticException e) {
 			System.err.println("Don't divide by zero!"); //std err output
 		} finally {
             //code here will always run 
@@ -16,7 +16,7 @@ public class ExceptionPractice {
         */
         //System.out.println(finallyDemo());
 
-        /**
+        
         try {
             method1();
             System.out.println("You won't see this output if method1() throws any exception!");
@@ -30,13 +30,16 @@ public class ExceptionPractice {
             //functions like if statement logic, so go from most specific to least
             System.out.println("A generic exception occured");
         }
-        */
+        
 		System.out.println("Done!");
 	}
-
+    public static double divideOneBy (int divisor) {
+        return 1/divisor;
+    }
     public static String finallyDemo()
     {
        try {
+            System.out.println("try");
             return "method returns";
        }
        finally {

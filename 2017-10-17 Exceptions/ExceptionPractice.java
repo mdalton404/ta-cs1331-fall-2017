@@ -46,7 +46,8 @@ public class ExceptionPractice {
     
     //throws Exception specifies that whenever method1 is called, 
     //Exceptions must be handled
-    public static void method1() throws Exception {
+    public static void method1() throws NullPointerException,
+        StringIndexOutOfBoundsException, NumberFormatException {
         //NullPointerException an unchecked exception
         String nothing = null;
         System.out.println(nothing.length());

@@ -1,0 +1,10 @@
+water
+apple juice
+orange juice
+grape juice
+tomato juice
+fruit punch
+coca-cola
+pepsi
+mountain dew
+fanta

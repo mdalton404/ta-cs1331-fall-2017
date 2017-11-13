@@ -37,6 +37,6 @@ public class HelloWorldInnerClasses {
         Inner classes are very useful in helping outer classes handle things without
         having to flush out a class in another file. However, sometimes even providing
         the class with a name is unnecessary. Is it really that important that we gave the
-        EnglishGreeting a class name? Is there a way where we can not worry about
+        EnglishGreeting a class name? (No) Is there a way where we can not worry about
         doing that? (Yes, see HelloWorldAnonymousClasses.java)
      */

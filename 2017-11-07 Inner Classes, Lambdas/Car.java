@@ -79,7 +79,7 @@ public class Car implements Comparable<Car> {
 
         class MakeComparator implements Comparator<Car> { //note: class is below where it is instantiated,
             public int compare(Car a, Car b) {            //demonstrating order doesn't matter, just scope
-                return a.getMake().compareTo(b.getMake());
+                return a.getMake().compareTo(b.getMake());//for inner classes
             }
         }
 
@@ -90,11 +90,13 @@ public class Car implements Comparable<Car> {
         System.out.print("\n");
 
         //(2) using anonymous class
-        Collections.sort(cars, new Comparator<Car>() {
+        Collections.sort(cars,  new Comparator<Car>() {
             public int compare(Car a, Car b) {
                 return a.getMake().compareTo(b.getMake());
             }
         });
+
+
 
         System.out.println("(2) Sort by make: ");
         for (Car c : cars) {

@@ -1,0 +1,2 @@
+All HTML visualizations from Univerity of San Francisco CS department
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html

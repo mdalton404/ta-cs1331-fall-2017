@@ -1,7 +1,7 @@
 import java.util.Comparator;
 import java.util.Collections;
 import java.util.ArrayList;
-public class Test {
+public class TestMinions {
     public static void main(String[] args) {
         MinionList list = new MinionList();
         list.enqueue(new Minion("Bob", 1.0, 130));

@@ -211,7 +211,7 @@ public class MinionList
      * Removes head of LinkedList
      */
     public Minion pop() throws java.util.NoSuchElementException {
-        dequeue();
+        return dequeue();
     }
 
     /**
